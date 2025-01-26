@@ -22,18 +22,18 @@ const Home = () => {
         <Image source={require('../images/search.png')} style={{width:24,height:24}} />
     </TouchableOpacity>
 
-    <View style={{width:'20%',height:'100%',justifyContent:'center',alignItems:'center'}} >
-       <TouchableOpacity style ={{width:40,height:40,backgroundColor:'#000',borderRadius:30,justifyContent:'center', alignItems:'center'}} onPress={() => setSelected(2)}>
-       <Image source={require('../images/cart.png')} style={{width:24,height:24}} />
+    
+       <TouchableOpacity style ={{width:'20%',height:'100%',justifyContent:'center',alignItems:'center'}} onPress={() => setSelected(2)}>
+       <Image source={require('../images/cart.png')} style={{width:29,height:24,}} />
        </TouchableOpacity>
-    </View>
+    
 
     <TouchableOpacity style={{width:'20%',height:'100%',justifyContent:'center',alignItems:'center'}} onPress={() => setSelected(3)}>
         <Image source={require('../images/love.png')} style={{width:24,height:24}} />
     </TouchableOpacity>
-
-    <TouchableOpacity style={{width:'20%',height:'100%',justifyContent:'center',alignItems:'center'}} onPress={() => setSelected(4)}>
-        <Image source={require('../images/user.png')} style={{width:24,height:24}} />
+   
+    <TouchableOpacity style={{width:'20%',height:'100%',justifyContent:'center',alignItems:'center' }} onPress={() => setSelected(4)}>
+        <Image source={require('../images/user.png')} style={{width:24,height:24, }} />
     </TouchableOpacity>
 
     </View>
