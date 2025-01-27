@@ -5,12 +5,11 @@ import { FlatList } from 'react-native-gesture-handler';
 
 const Checkout = () => {
   const cartdata = useSelector((state) => state.reducers1 || []);
-  const fallbackImage = 'https://via.placeholder.com/150'; // Fallback image
 
   const getTotal = () => {
     let total = 0;
     cartdata.map((item) => {
-      total += item.price;
+      total += item.price
     });
     return total;
   };
@@ -48,6 +47,9 @@ const Checkout = () => {
                 <View style={styles.itemDetails}>
                   <Text style={styles.itemName}>{item.name}</Text>
                   <Text style={styles.itemPrice}>₹ {item.price}</Text>
+                 {/* <View style={{flexDirection:'row',justifyContent:'space-between'}}> <Text style={styles.itemquantity}>items: {item.quantity}</Text>
+                 <Text style={styles.itemPrice}>subTotal:  ₹{item.quantity * item.price}</Text>
+                 </View> */}
                 </View>
               </View>
             );
@@ -105,6 +107,10 @@ const styles = StyleSheet.create({
   itemName: {
     fontSize: 16,
     fontWeight: '600',
+  },
+  itemquantity: {
+    fontSize: 16,
+    fontWeight: '300',
   },
   itemPrice: {
     fontSize: 14,

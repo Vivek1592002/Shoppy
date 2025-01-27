@@ -41,7 +41,7 @@ const App = () => {
         <ActivityIndicator size="large" color="#0000ff" />
         <Text>Loading...</Text>
       </View>
-    ); // Loading screen while store is being set up
+    ); 
   }
 
   return (
