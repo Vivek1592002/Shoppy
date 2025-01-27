@@ -1,25 +1,28 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
+import Share from 'react-native-share';
 
 const fallbackImage = require('../images/default.jpg');
 
-const ItemCard = ({ item ,onAddToCart,onAddWishList}) => {
+const Wish = ({ item ,onRemoveItem,onAddToCart,}) => {
   const imageSource = item.image
     ? { uri: item.image.startsWith('//') ? `https:${item.image}` : item.image } // Handle Contentful's image URLs
     : fallbackImage;
+
 
   return (
     
     <View
       style={{
-        width: 200,
+        width: '90%',
         height: 250,
-        borderRadius: 10,
+        borderRadius: 20,
         elevation: 5,
         backgroundColor: '#fff',
         marginLeft: 20,
-        marginRight: 10,
+        marginRight: 20,
+        marginTop:10,
         marginBottom: 10,
       }}
     >
@@ -27,9 +30,9 @@ const ItemCard = ({ item ,onAddToCart,onAddWishList}) => {
         source={imageSource}
         style={{
           width: '100%',
-          height: '65%',
-          borderTopLeftRadius: 10,
-          borderTopRightRadius: 10,
+          height: '67%',
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
         }}
         resizeMode="cover" 
       />
@@ -57,8 +60,9 @@ const ItemCard = ({ item ,onAddToCart,onAddWishList}) => {
             onAddToCart(item);
           }}
         >
-          <Text style={{ color: '#000' }}>Add to Cart</Text>
+          <Text style={{ color: '#000' }}>Add to cart</Text>
         </TouchableOpacity>
+        
       </View>
       <TouchableOpacity
         style={{
@@ -74,13 +78,31 @@ const ItemCard = ({ item ,onAddToCart,onAddWishList}) => {
           alignItems: 'center',
         }}
         onPress={() =>{
-          onAddWishList(item);
+          onRemoveItem();
         }}
       >
-        <Image source={require('../images/love.png')} style={{ width: 24, height: 24 }} />
+        <Image source={require('../images/heart.png')} style={{ width: 24, height: 24 }} />
       </TouchableOpacity>
+
+
+
+      {/* Share Button */}
+      {/* <View style={{ marginTop: 10, alignItems: 'center' }}>
+        <TouchableOpacity
+          style={{
+            padding: 10,
+            backgroundColor: '#f0f0f0',
+            borderRadius: 10,
+            width: '90%',
+            alignItems: 'center',
+          }}
+          onPress={handleShare}
+        >
+          <Text style={{ color: '#000' }}>Share</Text>
+        </TouchableOpacity>
+      </View> */}
     </View>
   );
 };
 
-export default ItemCard;
+export default Wish;

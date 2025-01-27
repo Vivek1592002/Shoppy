@@ -80,12 +80,15 @@ import { useNavigation } from '@react-navigation/native';
 import Head from './Head';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import ItemCard from '../common/ItemCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItemToCart, addToWishList } from '../redux/actions/Actions';
 
 const SPACE_ID = 'hn7gf8i5a9fi'; 
 const ACCESS_TOKEN = 'YRJjo0bUtuMfBntHKDJNwg4pMQHAqgU71KzF1FDPiQY';
 const BASE_URL = `https://cdn.contentful.com/spaces/${SPACE_ID}`;
 
 const Main = () => {
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   const [categories, setCategories] = useState([]);
 
@@ -133,7 +136,8 @@ const Main = () => {
 
     fetchCategoriesWithProducts();
   }, []);
-
+// const items = useSelector(state =>state);
+// console.log(items);
   return (
     <ScrollView style={{ flex: 1 }}>
       <View style={{ flex: 1 }}>
@@ -184,11 +188,19 @@ const Main = () => {
               horizontal
               showsHorizontalScrollIndicator={false}
               keyExtractor={(item, index) => `product-${index}`}
-              renderItem={({ item }) => <ItemCard item={item} />}
+              renderItem={({ item }) => <ItemCard item={item}
+              onAddWishList={(x)=>{
+                dispatch(addToWishList(x));
+            }}
+               onAddToCart={(x)=>{
+                  dispatch(addItemToCart(x));
+              }} />}
             />
           </View>
         ))}
       </View>
+             <View style={{ width: '100%', height: 70,}}></View>
+      
     </ScrollView>
   );
 };

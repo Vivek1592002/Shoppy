@@ -4,32 +4,33 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 const fallbackImage = require('../images/default.jpg');
 
-const ItemCard = ({ item ,onAddToCart,onAddWishList}) => {
+const CartItems = ({ item ,onRemoveItem,onAddWishList}) => {
   const imageSource = item.image
-    ? { uri: item.image.startsWith('//') ? `https:${item.image}` : item.image } // Handle Contentful's image URLs
+    ? { uri: item.image.startsWith('//') ? `https:${item.image}` : item.image } 
     : fallbackImage;
 
   return (
     
     <View
       style={{
-        width: 200,
+        width: '90%',
         height: 250,
-        borderRadius: 10,
+        borderRadius: 20,
         elevation: 5,
         backgroundColor: '#fff',
         marginLeft: 20,
-        marginRight: 10,
+        marginRight: 20,
         marginBottom: 10,
+        marginTop:10,
       }}
     >
       <Image
         source={imageSource}
         style={{
           width: '100%',
-          height: '65%',
-          borderTopLeftRadius: 10,
-          borderTopRightRadius: 10,
+          height: '67%',
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
         }}
         resizeMode="cover" 
       />
@@ -54,10 +55,10 @@ const ItemCard = ({ item ,onAddToCart,onAddWishList}) => {
             backgroundColor: '#f0f0f0',
           }}
           onPress={() =>{
-            onAddToCart(item);
+            onRemoveItem();
           }}
         >
-          <Text style={{ color: '#000' }}>Add to Cart</Text>
+          <Text style={{ color: '#000' }}>Remove Item</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity
@@ -83,4 +84,4 @@ const ItemCard = ({ item ,onAddToCart,onAddWishList}) => {
   );
 };
 
-export default ItemCard;
+export default CartItems;

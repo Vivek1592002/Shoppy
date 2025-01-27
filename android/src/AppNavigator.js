@@ -6,6 +6,9 @@ import SplashScreen from './screens/SplashScreen';
 import Home from './screens/Home';
 import Main from './screens/Main';
 import Cart from './screens/Cart';
+import Checkout from './screens/Checkout';
+import WishList from './screens/Wishlist';
+import Profile from './screens/Profile';
 const Stack = createStackNavigator();
 
 
@@ -15,7 +18,12 @@ const AppNavigator = () => {
     <Stack.Screen options ={{headerShown: false}}name="SplashScreen" component={SplashScreen} />
     <Stack.Screen options ={{headerShown: false}}name="Home" component={Home} />
     <Stack.Screen  options ={{headerShown: false}} name="Main" component={Main} />
-    <Stack.Screen  options ={{headerShown: false}} name="Cart" component={Cart}/>
+    <Stack.Screen   name="Cart" component={Cart}/>
+    <Stack.Screen   name="Checkout" component={Checkout}/>
+    <Stack.Screen   name="WishList" component={WishList}/>
+    
+    <Stack.Screen  options ={{headerShown: false}} name="Profile" component={Profile}/>
+
     </Stack.Navigator>
     </NavigationContainer>
   )

@@ -8,7 +8,7 @@ const SplashScreen = () => {
    useEffect(()=>{
     setTimeout(() => {
        navigation.navigate('Home');
-    }, 3000)},[])
+    }, 3000)})
 
     return (
         <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
