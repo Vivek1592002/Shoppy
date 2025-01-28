@@ -10,7 +10,7 @@ const heartIcon = require('../images/heart.png');
 
 
 const ItemCard = ({ item, onAddToCart, onAddWishList,onRemoveWishList }) => {
-  const wishList = useSelector((state) => state.reducers2); // Get wishlist state
+  const wishList = useSelector((state) => state.reducers2);
   const isInWishlist = wishList.some((wishItem) => wishItem.name === item.name);
   const [ImageSource,SetImageSource] = useState(loveIcon);
   const imageSource = item.image
@@ -18,7 +18,7 @@ const ItemCard = ({ item, onAddToCart, onAddWishList,onRemoveWishList }) => {
     : fallbackImage;
     useEffect(() => {
       SetImageSource((wishList.some((wishItem) => wishItem.name === item.name)) ? heartIcon : loveIcon);
-    },[]);
+    },[wishList.some((wishItem) => wishItem.name === item.name)]);
 
     const handleWishListClick = () => {
       if (isInWishlist) {

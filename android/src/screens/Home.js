@@ -15,17 +15,14 @@ const Home = () => {
 
     return (
         <View style={styles.container}>
-            {selected == 0 ? (<Main />) : selected == 1 ? (navigation) : selected == 2 ? (<Cart />) : selected == 3 ? (<Wishlist />) : (<Profile />)}
+            {selected == 0 ? (<Main />) : selected == 1 ? (<Search/>) : selected == 2 ? (<Cart />) : selected == 3 ? (<Wishlist />) : (<Profile />)}
             <View style={styles.navBar}>
 
                 <TouchableOpacity style={styles.navButton} onPress={() => setSelected(0)}>
                     <Image source={require('../images/home.png')} style={styles.icon} />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.navButton} onPress={() => {
-
-                    setSelected(1)}}>
-                        
+                <TouchableOpacity style={styles.navButton} onPress={() => { setSelected(1)}}>    
                     <Image source={require('../images/search.png')} style={styles.icon} />
                 </TouchableOpacity>
 

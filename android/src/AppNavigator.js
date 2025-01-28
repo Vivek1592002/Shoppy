@@ -11,6 +11,9 @@ import WishList from './screens/Wishlist';
 import Profile from './screens/Profile';
 import Insta from './screens/insta';
 import Search from './screens/Search';
+import Login from './screens/Login';
+
+
 const Stack = createStackNavigator();
 
 
@@ -18,6 +21,7 @@ const AppNavigator = () => {
   return (<NavigationContainer>
     <Stack.Navigator>
     <Stack.Screen options ={{headerShown: false}}name="SplashScreen" component={SplashScreen} />
+    <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} />
     <Stack.Screen options ={{headerShown: false}}name="Home" component={Home} />
     <Stack.Screen  options ={{headerShown: false}} name="Main" component={Main} />
     <Stack.Screen   options ={{headerShown: true}} name="Cart" component={Cart}/>
@@ -25,7 +29,7 @@ const AppNavigator = () => {
     <Stack.Screen   name="Insta" component={Insta}/>
     <Stack.Screen   name="WishList" component={WishList}/>
     <Stack.Screen   name="Search" component={Search}/>
-    
+  
     <Stack.Screen  options ={{headerShown: false}} name="Profile" component={Profile}/>
 
     </Stack.Navigator>

@@ -1,4 +1,4 @@
-package com.shoppy
+package com.shoppingc;
 
 import android.app.Application
 import com.facebook.react.PackageList

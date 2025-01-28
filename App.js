@@ -23,8 +23,23 @@ import { Provider } from "react-redux";
 import MainContainer from "./android/src/MainContainer";
 import configureStore from "./android/src/redux/store/Store";
 import { Text,View, ActivityIndicator } from "react-native";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
+
+const configureGoogleSignin = () => {
+  // GoogleSignin.configure({
+  //   webClientId: '939948783552-j4qjkmfra0k4ri5o6vgqpm87l24i914k.apps.googleusercontent.com', 
+  //   offlineAccess: true,
+  // });
+};
+
 
 const App = () => {
+// useEffect(() => {
+//     configureGoogleSignin();
+//   }, []);
+
+
+  
   const [store, setStore] = useState(null);
 
   useEffect(() => {
