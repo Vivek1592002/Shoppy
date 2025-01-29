@@ -1,7 +1,11 @@
-import {  ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } from "../ActionTypes";
+import {  ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST,LOGOUT } from "../ActionTypes";
 
 const reducers2 = (state =[],action) =>{
     switch(action.type){
+        case LOGOUT:
+              return [];
+        
+          
         case ADD_TO_WISHLIST:
                 return [...state,action.payload];
             case REMOVE_FROM_WISHLIST:

@@ -1,35 +1,44 @@
 {
   "project_info": {
-    "project_number": "939948783552",
-    "project_id": "shoppy-449201",
-    "storage_bucket": "shoppy-449201.firebasestorage.app"
+    "project_number": "945182083766",
+    "project_id": "react-native-27a1a",
+    "storage_bucket": "react-native-27a1a.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:939948783552:android:efa7ae0adf70defe777a25",
+        "mobilesdk_app_id": "1:945182083766:android:977ca461eae9ad23933417",
         "android_client_info": {
           "package_name": "com.shoppingc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "939948783552-j4qjkmfra0k4ri5o6vgqpm87l24i914k.apps.googleusercontent.com",
+          "client_id": "945182083766-qcb52bpbkvcsrugb0nq4gc056kr84tsp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.shoppingc",
             "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
           }
+        },
+        {
+          "client_id": "945182083766-q8r81qjlkjp7p9abanoc8ubfkh3pi1ca.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDVEjhyZZfrfMrSnQug8KOJ_ViBWm27SUo"
+          "current_key": "AIzaSyBxR6xymmC44HYX8pyE7D6gI-PwqF0pgo4"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945182083766-q8r81qjlkjp7p9abanoc8ubfkh3pi1ca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
